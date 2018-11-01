@@ -9,6 +9,7 @@ class MainHandler(tornado.web.RequestHandler):
         # self.write(os.environ['response_message'])
         response_message = dict()
         response_message["service"] = "c"
+        self.set_header("Content-Type", "application/json")
         self.write(json.dumps(response_message))
 
 class HealthHandler(tornado.web.RequestHandler):
