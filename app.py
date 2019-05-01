@@ -6,6 +6,8 @@ import json
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.set_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+        headers = self.request.headers
+        print(headers)
         # self.write(os.environ['response_message'])
         response_message = dict()
         response_message["service"] = "c"
